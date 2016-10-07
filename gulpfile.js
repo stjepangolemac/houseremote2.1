@@ -1,10 +1,10 @@
-let gulp        = require("gulp"),
-    tslint      = require("gulp-tslint"),
-    tsc         = require("gulp-typescript"),
-    sourcemaps  = require("gulp-sourcemaps"),
-    concat      = require("gulp-concat"),
-    mocha       = require("gulp-mocha"),
-    istanbul    = require("gulp-istanbul"),
+let gulp = require("gulp"),
+    tslint = require("gulp-tslint"),
+    tsc = require("gulp-typescript"),
+    sourcemaps = require("gulp-sourcemaps"),
+    concat = require("gulp-concat"),
+    mocha = require("gulp-mocha"),
+    istanbul = require("gulp-istanbul"),
     runSequence = require("run-sequence"),
     remapIstanbul = require("remap-istanbul/lib/gulpRemapIstanbul");
 
@@ -14,14 +14,14 @@ let gulp        = require("gulp"),
  * ------------------------------------------------------------------
  */
 gulp.task("lint", function() {
-  return gulp.src([
-    "source/server/**/*.ts",
-    "source/test/**/*.test.ts"
-  ])
-    .pipe(tslint({
-      formatter: "verbose"
-    }))
-    .pipe(tslint.report());
+    return gulp.src([
+            "source/**/*.ts",
+            "specification/**/*.ts"
+        ])
+        .pipe(tslint({
+            formatter: "verbose"
+        }))
+        .pipe(tslint.report());
 });
 
 /**
@@ -32,31 +32,31 @@ gulp.task("lint", function() {
 var tsProj = tsc.createProject("tsconfig.json");
 
 gulp.task("build-app", function() {
-  return gulp.src([
-    "source/server/**/*.ts",
-    "typings/index.d.ts/",
-    "source/server/interfaces/interfaces.d.ts"
-  ])
-    .pipe(sourcemaps.init())
-    .pipe(tsc(tsProj))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest("built/server/"));
+    return gulp.src([
+            "source/**/*.ts",
+            "source/**/*.d.ts",
+            "typings/index.d.ts/"
+        ])
+        .pipe(sourcemaps.init())
+        .pipe(tsc(tsProj))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest("built/"));
 });
 
 var tsTestProj = tsc.createProject("tsconfig.json");
 
 gulp.task("build-test", function() {
-  return gulp.src([
-      "source/test/**/*.test.ts",
-      "typings/index.d.ts/",
-      "source/server/interfaces/interfaces.d.ts"
-    ])
-    .pipe(tsc(tsTestProj))
-    .js.pipe(gulp.dest("built/"));
+    return gulp.src([
+            "specifications/**/*.test.ts",
+            "source/interfaces/*.d.ts",
+            "typings/index.d.ts/"
+        ])
+        .pipe(tsc(tsTestProj))
+        .js.pipe(gulp.dest("built/"));
 });
 
 gulp.task("build", function(cb) {
-  runSequence(["build-app", "build-test"], cb);
+    runSequence(["build-app", "build-test"], cb);
 });
 
 /**
@@ -65,40 +65,40 @@ gulp.task("build", function(cb) {
  * ------------------------------------------------------------------
  */
 gulp.task("pre-test", function() {
-    return gulp.src(["built/server/**/*.js"])
-    // Covering files
-    .pipe(istanbul())
-    // Write the covered files to a temporary directory
-    // .pipe(gulp.dest("test-tmp/"))
-    .pipe(istanbul.hookRequire());
+    return gulp.src(["built/**/*.js"])
+        // Covering files
+        .pipe(istanbul())
+        // Write the covered files to a temporary directory
+        // .pipe(gulp.dest("test-tmp/"))
+        .pipe(istanbul.hookRequire());
 });
 
 gulp.task("test", ["pre-test"], function() {
-  return gulp.src("built/test/**/*.test.js")
-    .pipe(mocha({
-      ui: "bdd"
-    }))
-    .pipe(istanbul.writeReports({
-        reporters: ["json"],
-        reportOpts: {
-    "text": {dir: "coverage/js", file: "coverage.txt"},
-    "text-summary": {dir: "coverage/js", file: "coverage-summary.txt"}
-  }
+    return gulp.src("specifications/**/*.test.js")
+        .pipe(mocha({
+            ui: "bdd"
+        }))
+        .pipe(istanbul.writeReports({
+            reporters: ["json"],
+            reportOpts: {
+                "text": { dir: "coverage/js", file: "coverage.txt" },
+                "text-summary": { dir: "coverage/js", file: "coverage-summary.txt" }
+            }
 
-    }));
+        }));
 });
 
-gulp.task("remap-istanbul", function () {
+gulp.task("remap-istanbul", function() {
     return gulp.src("coverage/coverage-final.json")
         .pipe(remapIstanbul({
-        basePath: "source/",
-        reports: {
-            "html": "coverage/html",
-            "json": "coverage/coverage-final.json",
-            "text": null,
-            "text-summary": null
-        }
-    }));
+            basePath: "source/",
+            reports: {
+                "html": "coverage/html",
+                "json": "coverage/coverage-final.json",
+                "text": null,
+                "text-summary": null
+            }
+        }));
 });
 
 /**
@@ -106,10 +106,10 @@ gulp.task("remap-istanbul", function () {
  * DEFAULT AND WATCH TASKS
  * 
  */
-gulp.task("default", function (cb) {
+gulp.task("default", function(cb) {
     runSequence("lint", "build-app", "build-test", "test", "remap-istanbul", cb);
 });
 
-gulp.task("watch", ["default"], function () {
-    gulp.watch([ "source/server/**/*.ts", "source/test/**/*.test.ts"], ["default"]);
+gulp.task("watch", ["default"], function() {
+    gulp.watch(["source/**/*.ts", "specifications/**/*.ts"], ["default"]);
 });

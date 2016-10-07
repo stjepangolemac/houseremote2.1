@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.tabSize": 2,
+    "editor.cursorBlinking": "blink",
+    "editor.cursorStyle": "line",
+    "editor.renderWhitespace": true,
+    "editor.renderIndentGuides": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "built/**/.js": true
+    }
+}
