@@ -38,7 +38,8 @@ gulp.task("build-app", function() {
             "typings/index.d.ts/"
         ])
         .pipe(sourcemaps.init())
-        .pipe(tsc(tsProj))
+        //.pipe(tsc(tsProj))
+        .pipe(tsProj(tsc.fullReporter))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("built/"));
 });
@@ -51,7 +52,7 @@ gulp.task("build-test", function() {
             "source/interfaces/*.d.ts",
             "typings/index.d.ts/"
         ])
-        .pipe(tsc(tsTestProj))
+        .pipe(tsTestProj(tsc.fullReporter))
         .js.pipe(gulp.dest("built/"));
 });
 

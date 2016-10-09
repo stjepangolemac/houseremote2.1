@@ -1,13 +1,17 @@
 {
     "compilerOptions": {
 	"target": "es5",
+	"lib": ["es6", "dom"],
+        "types": ["reflect-metadata"],
         "module": "commonjs",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "outDir": "built"
+        "outDir": "built",
+	"experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "exclude": [
         "node_modules"
