@@ -22,31 +22,25 @@ export default class Settings implements INTERFACES.ISettings {
   public key: any;
 
   constructor() {
-    this.setup(process.env.CONFIG);
+    this.setup();
   }
 
   /**
    * Reads the settings from configuration variable
    */
-  private setup = (config: string) => {
-    let configuration: any;
-    try {
-      configuration = require("../../configuration/" + config + ".js");
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-
-    this.port = configuration.port;
-    this.logConsole = configuration.logconsole;
-    this.logConsoleLvl = configuration.logconsolelvl;
-    this.logFile = configuration.logfile;
-    this.logFileLvl = configuration.logfilelvl;
-    this.logFilename = configuration.logfilename;
-    this.dbUrl = configuration.dburl;
-    this.dbUser = configuration.dbuser;
-    this.dbPass = configuration.dbpass;
-    this.model = configuration.model;
-    this.pinCount = configuration.pincount;
+  private setup = () => {
+    this.port = process.env.PORT;
+    this.logConsole = process.env.LOG_CONSOLE;
+    this.logConsoleLvl = process.env.LOG_CONSOLE_LVL;
+    this.logFile = process.env.LOG_FILE;
+    this.logFileLvl = process.env.LOG_FILE_LVL;
+    this.logFilename = process.env.LOG_FILENAME;
+    this.dbUrl = process.env.DB_URL;
+    this.dbUser = process.env.DB_USER;
+    this.dbPass = process.env.DB_PASS;
+    this.model = process.env.MODEL;
+    this.pinCount = process.env.PIN_COUNT;
+    this.cert = process.env.CERT;
+    this.key = process.env.KEY;
   }
 }

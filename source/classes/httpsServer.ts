@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import { injectable, inject } from "inversify";
-import * as fs from "fs";
 import * as https from "https";
 import * as express from "express";
 import * as bodyParser from "body-parser";
@@ -34,7 +33,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     this.options = {
       cert: this.settings.cert,
       key: this.settings.key,
-    }
+    };
 
     this.app = express();
     this.setupAll();

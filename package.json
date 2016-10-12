@@ -7,7 +7,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "CONFIG=development node built/startup.js",
+        "test": "CONFIG=dev node built/startup.js",
         "start": "CONFIG=heroku node built/startup.js"
     },
     "author": "",
@@ -28,6 +28,7 @@
     "dependencies": {
         "bluebird": "^3.4.6",
         "body-parser": "^1.15.2",
+        "dotenv": "^2.0.0",
         "express": "^4.14.0",
         "inversify": "^2.0.1",
         "mongoose": "^4.6.3",
