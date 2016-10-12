@@ -4,8 +4,9 @@ import * as INTERFACES from "./interfaces";
 /**
  * Load environment variables.
  */
-dotenv.config({ path: "./configuration/.env." + process.env.CONFIG });
-console.log(process.env.KEY);
+if(process.env.CONFIG !== "heroku") {
+  dotenv.config({ path: "./configuration/.env." + process.env.CONFIG });
+}
 
 /**
  * Loads the inversify kernel
