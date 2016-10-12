@@ -16,6 +16,8 @@ export default class Settings implements INTERFACES.ISettings {
   public dbUrl: string;
   public dbUser: string;
   public dbPass: string;
+  public model: string;
+  public pinCount: number;
 
   constructor() {
     this.setup(process.env.CONFIG);
@@ -29,7 +31,7 @@ export default class Settings implements INTERFACES.ISettings {
     try {
       configuration = require("../../configuration/" + config + ".js");
     } catch (error) {
-      console.log("Settings cannot find", config, "configuration file");
+      console.log(error);
       throw error;
     }
 
@@ -42,5 +44,7 @@ export default class Settings implements INTERFACES.ISettings {
     this.dbUrl = configuration.dburl;
     this.dbUser = configuration.dbuser;
     this.dbPass = configuration.dbpass;
+    this.model = configuration.model;
+    this.pinCount = configuration.pincount;
   }
 }

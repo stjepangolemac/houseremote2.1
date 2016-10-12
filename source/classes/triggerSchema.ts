@@ -1,4 +1,4 @@
-import { injectable } from "inversify";
+/*HAVENT DECIDED DO WE NEED THIS import { injectable } from "inversify";
 import mongoose = require("mongoose");
 import * as bluebird from "bluebird";
 mongoose.Promise = bluebird;
@@ -6,22 +6,25 @@ mongoose.Promise = bluebird;
 import * as INTERFACES from "../interfaces";
 /**
  * TriggerSchema represents a trigger data model for the MongoDB
- */
+ *
 @injectable()
 export default class TriggerSchema implements INTERFACES.ISchema {
   name: string;
   schema: mongoose.Schema;
 
   constructor() {
-    this.name = "trigger";
+    this.name = "Trigger";
     this.schema = this.setSchema();
   }
 
 /**
  * The trigger schema is described here.
- */
+ *
   private setSchema = () => {
     return new mongoose.Schema({
+      /**
+       * Time unit is milisecond.
+       *
       duration: {
         default: 300,
         max: 1000,
@@ -35,9 +38,9 @@ export default class TriggerSchema implements INTERFACES.ISchema {
         type: String,
       },
       relay: {
-        ref: "Relay",
+        ref: "Device",
         type: mongoose.Schema.Types.ObjectId,
       },
     });
   }
-}
+}*/

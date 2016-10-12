@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "CONFIG=development node built/startup.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "inversify": "^2.0.1",
     "mongoose": "^4.6.3",

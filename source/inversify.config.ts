@@ -1,15 +1,3 @@
-/**
- *  import { Kernel } from "inversify";
-    import TYPES from "./interfaces/";
-    import { Ninja, Katana, Shuriken } from "./classes";
-
-    var kernel = new Kernel();
-    kernel.bind<Warrior>(TYPES.Warrior).to(Ninja);
-    kernel.bind<Weapon>(TYPES.Weapon).to(Katana);
-    kernel.bind<ThrowableWeapon>(TYPES.ThrowableWeapon).to(Shuriken);
-
-    export default kernel;
- */
 import * as INTERFACES from "./interfaces";
 
 /**
@@ -17,13 +5,31 @@ import * as INTERFACES from "./interfaces";
  */
 import Settings from "./classes/settings";
 import Logger from "./classes/logger";
+import DeviceSchema from "./classes/deviceSchema";
+import DataManager from "./classes/dataManager";
+import Controller from "./classes/controller";
+import ControllerManager from "./classes/controllerManager";
+import HTTPSServer from "./classes/httpsServer";
 
 import { Kernel } from "inversify";
 
+/**
+ * Bind all classes to their string identifiers
+ */
 let kernel = new Kernel();
 kernel.bind<INTERFACES.ISettings>("Settings").to(Settings);
 kernel.bind<INTERFACES.ILogger>("Logger").to(Logger);
+kernel.bind<INTERFACES.ISchema>("Schemas").to(DeviceSchema);
+kernel.bind<INTERFACES.IDataManager>("DataManager").to(DataManager);
+kernel.bind<INTERFACES.IController>("Controller").to(Controller);
+kernel.bind<() => INTERFACES.IController>("Factory<Controller>")
+.toFactory<INTERFACES.IController>((context) => {
+    return () => {
+        return context.kernel.get<INTERFACES.IController>("Controller");
+    };
+});
+kernel.bind<INTERFACES.IControllerManager>("ControllerManager")
+.to(ControllerManager);
+kernel.bind<INTERFACES.IHTTPSServer>("HTTPSServer").to(HTTPSServer);
 
-kernel.get<INTERFACES.ILogger>("Logger");
-// console.log(logger.settings.logConsoleLvl);
 export default kernel;

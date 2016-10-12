@@ -1,13 +1,8 @@
-/**
- * Loads the configuration
- */
-// const configuration = require("../configuration/" + process.env.CONF);
+import * as INTERFACES from "./interfaces";
 
 /**
  * Loads the inversify kernel
  */
-// import * as kernel from "./inversify.config";
+import kernel from "./inversify.config";
 
-/**
- * Resolve server
- */
+kernel.get<INTERFACES.IHTTPSServer>("HTTPSServer");
