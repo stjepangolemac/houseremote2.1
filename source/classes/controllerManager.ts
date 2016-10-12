@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable, inject } from "inversify";
 import * as express from "express";
 import * as INTERFACES from "../interfaces";

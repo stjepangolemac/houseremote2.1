@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable, inject } from "inversify";
 import * as mongoose from "mongoose";
 import * as express from "express";

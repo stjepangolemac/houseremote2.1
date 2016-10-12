@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable, inject } from "inversify";
 import mongoose = require("mongoose");
 import * as bluebird from "bluebird";

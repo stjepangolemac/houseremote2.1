@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable, inject } from "inversify";
 import * as fs from "fs";
 import * as https from "https";
