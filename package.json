@@ -2,7 +2,7 @@
     "name": "houseremote2.1",
     "version": "2.1.0",
     "engines": {
-    "node": "6.6.0"
+        "node": "6.6.0"
     },
     "description": "",
     "main": "index.js",
