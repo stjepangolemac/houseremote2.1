@@ -4,7 +4,7 @@ import * as INTERFACES from "./interfaces";
 /**
  * Load environment variables.
  */
-if(process.env.CONFIG !== "heroku") {
+if (process.env.CONFIG !== "heroku") {
   dotenv.config({ path: "./configuration/.env." + process.env.CONFIG });
 }
 
