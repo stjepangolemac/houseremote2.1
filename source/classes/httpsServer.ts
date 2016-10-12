@@ -19,10 +19,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
   public controllerManager: INTERFACES.IControllerManager;
   public app: express.Express;
 
-  private options = {
-    cert: fs.readFileSync("configuration/certificates/localhost.crt"),
-    key: fs.readFileSync("configuration/certificates/localhost.pem"),
-  };
+  private options: Object;
 
   constructor(
     @inject("Settings") settings: INTERFACES.ISettings,
@@ -33,6 +30,11 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     this.settings = settings;
     this. logger = logger;
     this.controllerManager = controllerManager;
+
+    this.options = {
+      cert: this.settings.cert,
+      key: this.settings.key,
+    }
 
     this.app = express();
     this.setupAll();

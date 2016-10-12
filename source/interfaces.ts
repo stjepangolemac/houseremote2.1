@@ -15,6 +15,8 @@ export interface ISettings {
   dbPass: string;
   model: string;
   pinCount: number;
+  cert: any;
+  key: any;
 }
 
 export interface IServer {

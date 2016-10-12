@@ -18,6 +18,8 @@ export default class Settings implements INTERFACES.ISettings {
   public dbPass: string;
   public model: string;
   public pinCount: number;
+  public cert: any;
+  public key: any;
 
   constructor() {
     this.setup(process.env.CONFIG);
