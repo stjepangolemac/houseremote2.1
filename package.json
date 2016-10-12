@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "CONFIG=development node built/startup.js",
-        "start": "CONFIG=development node built/startup.js"
+        "start": "CONFIG=heroku node built/startup.js"
     },
     "author": "",
     "license": "ISC",
