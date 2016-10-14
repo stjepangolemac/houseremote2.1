@@ -14,7 +14,7 @@ import * as INTERFACES from "../interfaces";
 export default class DataManager implements INTERFACES.IDataManager {
   public settings: INTERFACES.ISettings;
   public logger: INTERFACES.ILogger;
-  public models: mongoose.Model<mongoose.Document>[];
+  public models: INTERFACES.IModel[];
   public schemas: INTERFACES.ISchema[];
 
   private connections: mongoose.Connection[];
@@ -70,6 +70,13 @@ export default class DataManager implements INTERFACES.IDataManager {
           this.schemas[index].name, this.schemas[index].schema
         )
       );
+
+      /**
+       * If schema is auth this model is auth too.
+       */
+      if (this.schemas[index].isAuth) {
+        this.models[index].isAuth = true;
+      }
     });
   }
 }

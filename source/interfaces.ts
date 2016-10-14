@@ -2,6 +2,7 @@ import * as https from "https";
 import * as express from "express";
 import * as mongoose from "mongoose";
 import * as winston from "winston";
+import * as bluebird from "bluebird";
 
 export interface ISettings {
   port: number;
@@ -34,12 +35,17 @@ export interface ISchema {
   settings: ISettings;
   name: string;
   schema: mongoose.Schema;
+  isAuth: boolean;
+}
+
+export interface IModel extends mongoose.Model<mongoose.Document> {
+  isAuth?: boolean;
 }
 
 export interface IDataManager {
   settings: ISettings;
   logger: ILogger;
-  models: mongoose.Model<mongoose.Document>[];
+  models: IModel[];
   schemas: ISchema[];
 }
 
@@ -48,9 +54,18 @@ export interface IController {
   logger: ILogger;
   path: string;
   router: express.Router;
-  model: mongoose.Model<mongoose.Document>;
+  model: IModel;
+  setModel: (model: IModel) => void;
+  checkLogin: (data: any) => bluebird<any>;
+  create: (data: any) => any;
+  read: (data: any) => any;
+  readOne: (id: string) => any;
+  update: (data: any) => any;
+  remove: (data: any) => any;
+}
 
-  setModel: (model: mongoose.Model<mongoose.Document>) => void;
+export interface IControllerFactory {
+  (): IController;
 }
 
 export interface IControllerManager {
@@ -58,6 +73,7 @@ export interface IControllerManager {
   logger: ILogger;
   router: express.Router;
   dataManager: IDataManager;
+  tokenManager: ITokenManager;
   controllerFactory: () => IController;
   controllers: IController[];
 }
@@ -68,4 +84,11 @@ export interface IHTTPSServer {
   logger: ILogger;
   app: express.Express;
   controllerManager: IControllerManager;
+}
+
+export interface ITokenManager {
+  settings: ISettings;
+  logger: ILogger;
+  signToken: (payload: any) => bluebird<any>;
+  validateToken: (token: string) => bluebird<any>;
 }

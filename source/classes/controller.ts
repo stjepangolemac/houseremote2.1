@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { injectable, inject } from "inversify";
-import * as mongoose from "mongoose";
+import * as bluebird from "bluebird";
 import * as express from "express";
 
 import * as INTERFACES from "../interfaces";
@@ -15,7 +15,7 @@ export default class Controller implements INTERFACES.IController {
   public settings: INTERFACES.ISettings;
   public logger: INTERFACES.ILogger;
   public router: express.Router;
-  public model: mongoose.Model<mongoose.Document>;
+  public model: INTERFACES.IModel;
   public path: string;
 
   constructor(
@@ -102,7 +102,7 @@ export default class Controller implements INTERFACES.IController {
   /**
    * Set controllers model.
    */
-  public setModel = (model: mongoose.Model<mongoose.Document>) => {
+  public setModel = (model: INTERFACES.IModel) => {
     this.model = model;
     this.path = "/" + model.modelName.toLowerCase();
     this.routerReady();
@@ -128,5 +128,28 @@ export default class Controller implements INTERFACES.IController {
 
   public remove = (data: any) => {
     return this.model.findByIdAndRemove(data.id);
+  }
+
+  /**
+   * If model is authentication model use this method to
+   * validate login credentials.
+   */
+  public checkLogin = (data: any) => {
+    return new bluebird((
+    resolve: (value?: any) => void,
+    reject: (value?: any) => void) => {
+      this.model.findOne(data)
+      .then((user) => {
+        if (user === null) {
+          resolve(null);
+        } else {
+          resolve(user);
+        }
+      })
+      .catch((error) => {
+        this.logger.error(error);
+        reject(error);
+      });
+    });
   }
 }

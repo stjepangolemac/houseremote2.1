@@ -13,18 +13,21 @@ export default class DeviceSchema implements INTERFACES.ISchema {
   public settings: INTERFACES.ISettings;
   public name: string;
   public schema: mongoose.Schema;
+  public isAuth: boolean;
 
   constructor(
     @inject("Settings") settings: INTERFACES.ISettings
   ) {
     this.settings = settings;
     this.name = "Device";
+    this.isAuth = false;
+
     this.setSchema();
   }
 
-/**
- * The Device schema is described here.
- */
+  /**
+   * The Device schema is described here.
+   */
   private setSchema = () => {
     let schema = new mongoose.Schema({
       description: {

@@ -14,6 +14,7 @@ implements INTERFACES.IControllerManager {
   public logger: INTERFACES.ILogger;
   public router: express.Router;
   public dataManager: INTERFACES.IDataManager;
+  public tokenManager: INTERFACES.ITokenManager;
   public controllerFactory: () => INTERFACES.IController;
   public controllers: INTERFACES.IController[];
 
@@ -21,12 +22,14 @@ implements INTERFACES.IControllerManager {
     @inject("Settings") settings: INTERFACES.ISettings,
     @inject("Logger") logger: INTERFACES.ILogger,
     @inject("DataManager") dataManager: INTERFACES.IDataManager,
+    @inject("TokenManager") tokenManager: INTERFACES.ITokenManager,
     @inject("Factory<Controller>") controllerFactory:
-      () => INTERFACES.IController
+      INTERFACES.IControllerFactory
   ) {
     this.settings = settings;
     this.logger = logger;
     this.dataManager = dataManager;
+    this.tokenManager = tokenManager;
     this.controllerFactory = controllerFactory;
 
     this.router = express.Router();
@@ -35,7 +38,7 @@ implements INTERFACES.IControllerManager {
   }
 
   /**
-   * Assign models to controllers and set them up.
+   * Assign models to controllers and set CRUD and /login routes.
    */
   public initializeControllers = () => {
     this.dataManager.models.forEach((model) => {
@@ -46,6 +49,37 @@ implements INTERFACES.IControllerManager {
 
     this.controllers.forEach((controller) => {
       this.router.use(controller.path, controller.router);
+    });
+
+    let authController = this.controllers.find((controller) => {
+      return controller.model.isAuth;
+    });
+
+    this.router.post("/login", (req, res, next) => {
+      authController.checkLogin(req.body)
+      .then((user) => {
+        if (user === null) {
+          res.sendStatus(404);
+        } else {
+          // SIGN TOKEN
+          // GIVE ME TOKEN
+          let payload = {
+            id: user.id,
+            permissions: user.permissions,
+          };
+          this.tokenManager.signToken(payload)
+          .then((token) => {
+            res.status(200).send(token);
+          })
+          .catch((error) => {
+            res.sendStatus(500);
+          });
+        }
+      })
+      .catch((error) => {
+        this.logger.error(error);
+        res.sendStatus(500);
+      });
     });
   }
 }
