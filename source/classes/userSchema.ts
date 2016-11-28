@@ -39,7 +39,7 @@ export default class UserSchema implements INTERFACES.ISchema {
       },
       permissions: [{
         maxlength: [16, "permission must not be longer than 16 characters"],
-        minlength: [4, "permission must not be longer than 4 characters"],
+        minlength: [4, "permission must not be shorter than 4 characters"],
         type: String,
       }],
       username: {

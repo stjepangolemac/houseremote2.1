@@ -34,6 +34,7 @@
     "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.6.3",
     "passport": "^0.3.2",
-    "reflect-metadata": "^0.1.8"
+    "reflect-metadata": "^0.1.8",
+    "rpio": "^0.9.12"
   }
 }

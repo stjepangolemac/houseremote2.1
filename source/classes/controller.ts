@@ -14,19 +14,21 @@ import * as INTERFACES from "../interfaces";
 export default class Controller implements INTERFACES.IController {
   public settings: INTERFACES.ISettings;
   public logger: INTERFACES.ILogger;
+  public emitter: INTERFACES.IEventSystem;
   public router: express.Router;
   public model: INTERFACES.IModel;
   public path: string;
 
   constructor(
     @inject("Settings") settings: INTERFACES.ISettings,
-    @inject("Logger") logger: INTERFACES.ILogger
+    @inject("Logger") logger: INTERFACES.ILogger,
+    @inject("EventSystem") eventSystem: INTERFACES.IEventSystem
   ) {
     this.settings = settings;
     this.logger = logger;
+    this.emitter = eventSystem;
 
     this.router = express.Router();
-    // this.routerNotReady();
   }
 
   /**
@@ -88,14 +90,17 @@ export default class Controller implements INTERFACES.IController {
         res.status(400).send(error);
       });
     });
-  }
 
-  /**
-   * Temporary set all routes as unavailable.
-   */
-  public routerNotReady = () => {
-    this.router.all("/*", (req, res, next) => {
-      res.sendStatus(503);
+    this.router.delete("/:id", (req, res, next) => {
+      this.remove(req.params.id)
+        .then((data) => {
+          console.log(data);
+          res.sendStatus(200);
+        })
+          .catch((error) => {
+          this.logger.error(error);
+          res.status(400).send(error);
+        });
     });
   }
 
@@ -109,6 +114,7 @@ export default class Controller implements INTERFACES.IController {
   }
 
   public create = (data: any) => {
+    this.emitter.emit(this.model.modelName);
     return new this.model(data).save();
   }
 
@@ -121,12 +127,14 @@ export default class Controller implements INTERFACES.IController {
   }
 
   public update = (data: any) => {
+    this.emitter.emit(this.model.modelName);
     let id = data.id;
     delete data.id;
     return this.model.findByIdAndUpdate(id, data);
   }
 
   public remove = (data: any) => {
+    this.emitter.emit(this.model.modelName);
     return this.model.findByIdAndRemove(data.id);
   }
 

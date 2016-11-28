@@ -16,6 +16,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
   public settings: INTERFACES.ISettings;
   public logger: INTERFACES.ILogger;
   public controllerManager: INTERFACES.IControllerManager;
+  public deviceManager: INTERFACES.IDeviceManager;
   public app: express.Express;
 
   private options: Object;
@@ -25,10 +26,12 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     @inject("Logger") logger: INTERFACES.ILogger,
     @inject("ControllerManager")
       controllerManager: INTERFACES.IControllerManager
+    // @inject("DeviceManager") deviceManager: INTERFACES.IDeviceManager
   ) {
     this.settings = settings;
     this. logger = logger;
     this.controllerManager = controllerManager;
+    // this.deviceManager = deviceManager;
 
     this.options = {
       cert: this.settings.cert,
@@ -53,6 +56,21 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
   public setupApp = () => {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(bodyParser.json());
-    this.app.use("/api", this.controllerManager.router);
+    this.app.use(function (req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+      res.header("Access-Control-Allow-Methods",
+        "POST, GET, PUT, DELETE, OPTIONS");
+      next();
+    });
+    this.app.use(function (req, res, next) {
+      if (req.method === "OPTIONS") {
+        res.status(200).send();
+      } else {
+        next();
+      }
+    });
+    this.app.use(this.controllerManager.router);
   }
 }

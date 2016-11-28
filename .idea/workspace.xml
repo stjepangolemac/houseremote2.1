@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="15e60874-31a6-42f2-bd4c-703d798fdc60" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/classes/triggerSchema.ts" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/sort-arrow-sprite.png" afterPath="$PROJECT_DIR$/coverage/html/sort-arrow-sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="$PROJECT_DIR$/.vscode/settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.txt" afterPath="$PROJECT_DIR$/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/controller.js" afterPath="$PROJECT_DIR$/built/classes/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/controllerManager.js" afterPath="$PROJECT_DIR$/built/classes/controllerManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/dataManager.js" afterPath="$PROJECT_DIR$/built/classes/dataManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/deviceSchema.js" afterPath="$PROJECT_DIR$/built/classes/deviceSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/httpsServer.js" afterPath="$PROJECT_DIR$/built/classes/httpsServer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/logger.js" afterPath="$PROJECT_DIR$/built/classes/logger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/settings.js" afterPath="$PROJECT_DIR$/built/classes/settings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/tokenManager.js" afterPath="$PROJECT_DIR$/built/classes/tokenManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/triggerSchema.js" afterPath="$PROJECT_DIR$/built/classes/triggerSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/classes/userSchema.js" afterPath="$PROJECT_DIR$/built/classes/userSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/interfaces.js" afterPath="$PROJECT_DIR$/built/interfaces.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/inversify.config.js" afterPath="$PROJECT_DIR$/built/inversify.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/built/startup.js" afterPath="$PROJECT_DIR$/built/startup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/coverage-final.json" afterPath="$PROJECT_DIR$/coverage/coverage-final.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/base.css" afterPath="$PROJECT_DIR$/coverage/html/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/index.html" afterPath="$PROJECT_DIR$/coverage/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/prettify.css" afterPath="$PROJECT_DIR$/coverage/html/prettify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/prettify.js" afterPath="$PROJECT_DIR$/coverage/html/prettify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/html/sorter.js" afterPath="$PROJECT_DIR$/coverage/html/sorter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/controller.ts" afterPath="$PROJECT_DIR$/source/classes/controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/controllerManager.ts" afterPath="$PROJECT_DIR$/source/classes/controllerManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/dataManager.ts" afterPath="$PROJECT_DIR$/source/classes/dataManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/deviceSchema.ts" afterPath="$PROJECT_DIR$/source/classes/deviceSchema.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/httpsServer.ts" afterPath="$PROJECT_DIR$/source/classes/httpsServer.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/logger.ts" afterPath="$PROJECT_DIR$/source/classes/logger.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/settings.ts" afterPath="$PROJECT_DIR$/source/classes/settings.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/tokenManager.ts" afterPath="$PROJECT_DIR$/source/classes/tokenManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/classes/userSchema.ts" afterPath="$PROJECT_DIR$/source/classes/userSchema.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/interfaces.ts" afterPath="$PROJECT_DIR$/source/interfaces.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/inversify.config.ts" afterPath="$PROJECT_DIR$/source/inversify.config.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/startup.ts" afterPath="$PROJECT_DIR$/source/startup.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tslint.json" afterPath="$PROJECT_DIR$/tslint.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings.json" afterPath="$PROJECT_DIR$/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/bluebird/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/bluebird/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/bluebird/typings.json" afterPath="$PROJECT_DIR$/typings/globals/bluebird/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/body-parser/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/body-parser/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/body-parser/typings.json" afterPath="$PROJECT_DIR$/typings/globals/body-parser/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/dotenv/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/dotenv/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/dotenv/typings.json" afterPath="$PROJECT_DIR$/typings/globals/dotenv/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/express-serve-static-core/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/express-serve-static-core/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/express-serve-static-core/typings.json" afterPath="$PROJECT_DIR$/typings/globals/express-serve-static-core/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/express/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/express/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/express/typings.json" afterPath="$PROJECT_DIR$/typings/globals/express/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/inversify/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/inversify/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/inversify/typings.json" afterPath="$PROJECT_DIR$/typings/globals/inversify/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/jsonwebtoken/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/jsonwebtoken/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/jsonwebtoken/typings.json" afterPath="$PROJECT_DIR$/typings/globals/jsonwebtoken/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mime/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/mime/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mime/typings.json" afterPath="$PROJECT_DIR$/typings/globals/mime/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mongodb/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/mongodb/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mongodb/typings.json" afterPath="$PROJECT_DIR$/typings/globals/mongodb/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mongoose/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/mongoose/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/mongoose/typings.json" afterPath="$PROJECT_DIR$/typings/globals/mongoose/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/node/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/node/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/node/typings.json" afterPath="$PROJECT_DIR$/typings/globals/node/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/passport/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/passport/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/passport/typings.json" afterPath="$PROJECT_DIR$/typings/globals/passport/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/serve-static/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/serve-static/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/serve-static/typings.json" afterPath="$PROJECT_DIR$/typings/globals/serve-static/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/winston/index.d.ts" afterPath="$PROJECT_DIR$/typings/globals/winston/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/globals/winston/typings.json" afterPath="$PROJECT_DIR$/typings/globals/winston/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/index.d.ts" afterPath="$PROJECT_DIR$/typings/index.d.ts" />
+    </list>
+    <ignored path="houseremote2.1.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="houseremote2.1" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/winston/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="29" />
+    <option name="width" value="1280" />
+    <option name="height" value="691" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houseremote2.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houseremote2.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houseremote2.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="JavaScriptPreferStrict" value="true" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15e60874-31a6-42f2-bd4c-703d798fdc60" name="Default" comment="" />
+      <created>1478392419789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1478392419789</updated>
+      <workItem from="1478392421265" duration="698000" />
+      <workItem from="1478532017807" duration="52000" />
+      <workItem from="1478609120012" duration="55000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="805000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="29" width="1280" height="691" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
