@@ -64,6 +64,7 @@ implements INTERFACES.IControllerManager {
 
   public makeAuth = () => {
     this.router.post("/login", (req, res, next) => {
+      console.log(JSON.stringify(req.body));
       this.authController.checkLogin(req.body)
       .then((user) => {
         if (user === null) {

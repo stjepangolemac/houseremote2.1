@@ -58,10 +58,9 @@ export default class Controller implements INTERFACES.IController {
     });
 
     this.router.post("/", (req, res, next) => {
-      let requestBody = req.body;
-      this.create(requestBody)
+      this.create(req.body)
       .then((data) => {
-        res.sendStatus(200);
+        res.status(200).send({ id: data._id });
       })
       .catch((error) => {
         this.logger.error(error);
@@ -71,7 +70,20 @@ export default class Controller implements INTERFACES.IController {
 
     this.router.put("/", (req, res, next) => {
       this.update(req.body)
-      .then((data) => {
+        .then((data) => {
+          res.sendStatus(200);
+      })
+      .catch((error) => {
+        this.logger.error(error);
+        res.status(400).send(error);
+      });
+    });
+
+    this.router.put("/:id", (req, res, next) => {
+      let _data = req.body;
+      _data._id = req.params.id;
+      this.update(_data)
+        .then((data) => {
         res.sendStatus(200);
       })
       .catch((error) => {
@@ -92,9 +104,8 @@ export default class Controller implements INTERFACES.IController {
     });
 
     this.router.delete("/:id", (req, res, next) => {
-      this.remove(req.params.id)
+      this.remove(req.params)
         .then((data) => {
-          console.log(data);
           res.sendStatus(200);
         })
           .catch((error) => {
@@ -128,9 +139,9 @@ export default class Controller implements INTERFACES.IController {
 
   public update = (data: any) => {
     this.emitter.emit(this.model.modelName);
-    let id = data.id;
-    delete data.id;
-    return this.model.findByIdAndUpdate(id, data);
+    return this.model.findOneAndUpdate({ _id: data._id }, data, {
+      new: true
+    });
   }
 
   public remove = (data: any) => {
