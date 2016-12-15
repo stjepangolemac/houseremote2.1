@@ -75,6 +75,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
       }
     });
     this.app.use("/pin/:pin/:mode", (req, res, next) => {
+      console.log("Turn ", req.params.pin, " to ", req.params.mode);
       let pin = req.params.pin;
       this.rpio.open(pin, this.rpio.OUTPUT, this.rpio.LOW);
 
