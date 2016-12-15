@@ -75,8 +75,8 @@ implements INTERFACES.IControllerManager {
             permissions: user.permissions,
           };
           this.tokenManager.signToken(payload)
-          .then((token) => {
-            res.status(200).send(token);
+            .then((token) => {
+              res.status(200).send({token});
           })
           .catch((error) => {
             res.sendStatus(500);
