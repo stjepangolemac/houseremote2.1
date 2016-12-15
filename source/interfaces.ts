@@ -88,6 +88,7 @@ export interface IHTTPSServer {
   app: express.Express;
   controllerManager: IControllerManager;
   deviceManager: IDeviceManager;
+  rpio: any;
 }
 
 export interface ITokenManager {
