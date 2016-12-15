@@ -81,9 +81,19 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
       console.log("Turn ", req.params.pin, " to ", req.params.mode);
       let pin = req.params.pin;
 
-      let cmdString = 'ifconfig';
+      let cmdString = 'echo "' + pin + '" > /sys/class/gpio/export && echo "out" > /sys/class/gpio/gpio' + pin + '/direction';
       exec(cmdString, (err: any, stdout: any, stderr: any) => {
-        console.log(stdout);
+        let cmd2 = "";
+        if (req.params.mode === "low") {
+          let cmd2 = 'echo "0" > /sys/class/gpio/gpio' + pin + '/value';
+        } else if (req.params.mode === "high") {
+          let cmd2 = 'echo "1" > /sys/class/gpio/gpio' + pin + '/value';
+        }        
+        
+        exec(cmd2, (err: any, stdout: any, stderr: any) => {
+          console.log(stdout, "\r\n\r\n", stderr);
+        })
+
       });
 
       if (req.params.mode == "low") {
