@@ -5,7 +5,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as INTERFACES from "../interfaces";
 import * as rpio from "rpio";
-import * as spawn from "child_process";
+const spawn = require("child_process").spawn;
 
 /**
  * HTTPSServer instantiates the Express app and routes CRUD
