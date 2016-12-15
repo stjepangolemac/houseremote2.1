@@ -5,7 +5,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as INTERFACES from "../interfaces";
 import * as rpio from "rpio";
-const spawn = require("child_process").spawn;
+const exec = require("child_process").exec;
 
 /**
  * HTTPSServer instantiates the Express app and routes CRUD
@@ -21,7 +21,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
   public deviceManager: INTERFACES.IDeviceManager;
   public app: express.Express;
   public rpio: any;
-  public spawn: any;
+  public exec: any;
 
   private options: Object;
 
@@ -37,7 +37,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     this.controllerManager = controllerManager;
     // this.deviceManager = deviceManager;
     this.rpio = rpio;
-    this.spawn = spawn;
+    this.exec = exec;
 
     this.options = {
       cert: this.settings.cert,
@@ -81,8 +81,10 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
       console.log("Turn ", req.params.pin, " to ", req.params.mode);
       let pin = req.params.pin;
 
-      let test = this.spawn('echo', ["13", ">", "/sys/class/gpio/export"]);
-      console.log(test.stdout);
+      let cmdString = 'ifconfig';
+      exec(cmdString, (err: any, stdout: any, stderr: any) => {
+        console.log(stdout);
+      });
 
       if (req.params.mode == "low") {
 
