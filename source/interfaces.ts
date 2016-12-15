@@ -89,6 +89,7 @@ export interface IHTTPSServer {
   controllerManager: IControllerManager;
   deviceManager: IDeviceManager;
   rpio: any;
+  spawn: any;
 }
 
 export interface ITokenManager {
