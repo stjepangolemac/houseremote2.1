@@ -86,25 +86,7 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
       let cmd2 = 'echo "out" > /sys/class/gpio/gpio13/direction';
       let cmd3 = 'echo "1" > /sys/class/gpio/gpio13/value';
 
-      this.exec(cmd1, (error: any, stdout: any, stderr: any) => {
-        if (error) {
-          console.log("ERROR ", error);
-        } else {
-          this.exec(cmd2, (error: any, stdout: any, stderr: any) => {
-            if (error) {
-              console.log("ERROR ", error);
-            } else {
-              this.exec(cmd3, (error: any, stdout: any, stderr: any) => {
-                if (error) {
-                  console.log("ERROR ", error);
-                } else {
-                  console.log("TO RASPBERRYU");
-                }
-              });
-            }
-          });
-        }
-      })
+      this.exec(cmd3);
     });
     this.app.use(this.controllerManager.router);
   }
