@@ -80,11 +80,12 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     this.app.use("/pin/:pin/:mode", (req, res, next) => {
       console.log("Turn ", req.params.pin, " to ", req.params.mode);
       let pin = req.params.pin;
+      let mode = req.params.mode;
       res.sendStatus(200);
 
-      let cmd1 = 'echo "13" > /sys/class/gpio/export';
-      let cmd2 = 'echo "out" > /sys/class/gpio/gpio13/direction';
-      let cmd3 = 'echo "1" > /sys/class/gpio/gpio13/value';
+      let cmd1 = 'echo "' + pin + '" > /sys/class/gpio/export';
+      let cmd2 = 'echo "out" > /sys/class/gpio/gpio' + pin + '/direction';
+      let cmd3 = 'echo "' + mode + '" > /sys/class/gpio/gpio' + pin + '/value';
 
       this.exec(cmd3);
     });
