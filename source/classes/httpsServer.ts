@@ -29,11 +29,11 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
     @inject("Settings") settings: INTERFACES.ISettings,
     @inject("Logger") logger: INTERFACES.ILogger,
     @inject("ControllerManager")
-      controllerManager: INTERFACES.IControllerManager
+    controllerManager: INTERFACES.IControllerManager
     // @inject("DeviceManager") deviceManager: INTERFACES.IDeviceManager
   ) {
     this.settings = settings;
-    this. logger = logger;
+    this.logger = logger;
     this.controllerManager = controllerManager;
     // this.deviceManager = deviceManager;
     this.rpio = rpio;
@@ -82,27 +82,29 @@ export default class HTTPSServer implements INTERFACES.IHTTPSServer {
       let pin = req.params.pin;
       res.sendStatus(200);
 
-      let cmdString = 'echo "' + pin + '" > /sys/class/gpio/export && echo "out" > /sys/class/gpio/gpio' + pin + '/direction';
-      exec(cmdString, (err: any, stdout: any, stderr: any) => {
-        console.log(stdout, "\r\n\r\n", stderr);
-        let cmd2 = "";
-        if (req.params.mode === "low") {
-          let cmd2 = 'echo "0" > /sys/class/gpio/gpio' + pin + '/value';
-        } else if (req.params.mode === "high") {
-          let cmd2 = 'echo "1" > /sys/class/gpio/gpio' + pin + '/value';
-        }        
-        
-        exec(cmd2, (err: any, stdout: any, stderr: any) => {
-          console.log(stdout, "\r\n\r\n", stderr);
-        })
+      let cmd1 = 'echo "13" > /sys/class/gpio/export';
+      let cmd2 = 'echo "out" > /sys/class/gpio/gpio13/direction';
+      let cmd3 = 'echo "1" > /sys/class/gpio/gpio13/value';
 
-      });
-
-      if (req.params.mode == "low") {
-
-      } else if (req.params.mode == "high") {
-
-      }
+      this.exec(cmd1, (error: any, stdout: any, stderr: any) => {
+        if (error) {
+          console.log("ERROR ", error);
+        } else {
+          this.exec(cmd2, (error: any, stdout: any, stderr: any) => {
+            if (error) {
+              console.log("ERROR ", error);
+            } else {
+              this.exec(cmd3, (error: any, stdout: any, stderr: any) => {
+                if (error) {
+                  console.log("ERROR ", error);
+                } else {
+                  console.log("TO TATA");
+                }
+              });
+            }
+          });
+        }
+      })
     });
     this.app.use(this.controllerManager.router);
   }
